@@ -6,8 +6,7 @@ It uses Google's Guava library.
 
 An example and a unit test included which uses Mockito (because it's delicious).
 
-How to use
-==========
+#### How to use
 Just like java.util.List
 
 <pre>This is a an example change listener implementation:
@@ -23,15 +22,16 @@ public class ListChangeListener implements ObservableList.ChangeListener {
 }</pre>
 
 This is how you can declare an observable list:
-`ObservableList<DeviceStatus> observableList = new ObservableList<DeviceStatus>(new ArrayList<DeviceStatus>());`
+<pre>ObservableList<DeviceStatus> observableList =
+								new ObservableList<DeviceStatus>(
+									new ArrayList<DeviceStatus>() );</pre>
 
 And this is how you can create, register and unregister the listeners:
 `observableListChangeListener = new ListChangeListener();`
 `observableList.addListener(observableListChangeListener);`
 `observableList.removeListener(observableListChangeListener);`
 
-Build
-=====
+#### Build
 Compile:
 `javac -d ./bin -cp ./lib/* ./src/hu/co/digital/observablelist/*.java`
 

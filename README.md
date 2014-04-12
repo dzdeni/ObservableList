@@ -10,27 +10,30 @@ How to use
 ==========
 Just like java.util.List
 
-This is a an example change listener implementation: 
-    public class ListChangeListener implements ObservableList.ChangeListener { 
-    	@Override 
-    		public void onObservableListChanged() { 
-    		// the ObservableList has been changed 
-    		// notify ListView's data adapter about the change 
-    		if (adapter != null) { 
-    			adapter.notifyDataSetChanged(); 
-    		}
-    	}
-    }
+<pre>This is a an example change listener implementation:
+public class ListChangeListener implements ObservableList.ChangeListener {
+	@Override
+	public void onObservableListChanged() {
+		// the ObservableList has been changed 
+		// notify ListView's data adapter about the change 
+		if (adapter != null) {
+			adapter.notifyDataSetChanged(); 
+		}
+	}
+}</pre>
+
 This is how you can declare an observable list:
-    ObservableList<DeviceStatus> observableList = new ObservableList<DeviceStatus>(new ArrayList<DeviceStatus>());
+`ObservableList<DeviceStatus> observableList = new ObservableList<DeviceStatus>(new ArrayList<DeviceStatus>());`
 
 And this is how you can create, register and unregister the listeners:
-    observableListChangeListener = new ListChangeListener();
-    observableList.addListener(observableListChangeListener);
-    observableList.removeListener(observableListChangeListener);
+`observableListChangeListener = new ListChangeListener();`
+`observableList.addListener(observableListChangeListener);`
+`observableList.removeListener(observableListChangeListener);`
 
 Build
 =====
-Compile: `javac -d ./bin -cp ./lib/* ./src/hu/co/digital/observablelist/*.java`
+Compile:
+`javac -d ./bin -cp ./lib/* ./src/hu/co/digital/observablelist/*.java`
 
-Run (Test): `java -cp ./lib/*;./bin org.junit.runner.JUnitCore hu.co.digital.observablelist.ObservableTest` (it's not an exhaustive test suite, just some example)
+Test: (it's not an exhaustive test suite, just some example)
+`java -cp ./lib/*;./bin org.junit.runner.JUnitCore hu.co.digital.observablelist.ObservableTest`

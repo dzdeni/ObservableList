@@ -7,10 +7,15 @@ It uses Google's Guava library.
 An example and a unit test included which uses Mockito (because it's delicious).
 
 #### How to use
-Like java.util.List, just with listeners
+Like java.util.List, just with some extras.
 
-<pre>This is a an example change listener implementation:
-public class ListChangeListener implements ObservableList.ChangeListener {
+This is how you can declare an observable list:
+<pre>ObservableList&lt;DeviceStatus&gt; observableList =
+								new ObservableList&lt;DeviceStatus&gt;(
+										new ArrayList&lt;DeviceStatus&gt;() );</pre>
+
+This is a an example change listener implementation:
+<pre>public class ListChangeListener implements ObservableList.ChangeListener {
 	@Override
 	public void onObservableListChanged() {
 		// the ObservableList has been changed
@@ -21,11 +26,6 @@ public class ListChangeListener implements ObservableList.ChangeListener {
 	}
 }</pre>
 
-This is how you can declare an observable list:
-<pre>ObservableList&lt;DeviceStatus&gt; observableList =
-								new ObservableList&lt;DeviceStatus&gt;(
-										new ArrayList&lt;DeviceStatus&gt;() );</pre>
-
 And this is how you can create, register and unregister the listeners:
 `observableListChangeListener = new ListChangeListener();`
 `observableList.addListener(observableListChangeListener);`
@@ -35,5 +35,5 @@ And this is how you can create, register and unregister the listeners:
 Compile:
 `javac -d ./bin -cp ./lib/* ./src/hu/co/digital/observablelist/*.java`
 
-Test: ''(it's not an exhaustive test suite, just an example)''
+Run Test: (which is not an exhaustive test suite, just an example)
 `java -cp ./lib/*;./bin org.junit.runner.JUnitCore hu.co.digital.observablelist.ObservableTest`

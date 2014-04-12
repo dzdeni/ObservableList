@@ -1,5 +1,7 @@
 package hu.co.digital.observablelist;
 
+import hu.co.digital.observablelist.ObservableList.ChangeListener;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -16,7 +18,14 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class SimpleTest {
+public class ObservableTest {
+	
+	public class SimpleChangeListener implements ObservableList.ChangeListener {
+
+		@Override
+		public void onObservableListChanged() {}
+
+	}
 	
 	@Mock ObservableList<Integer> mockedList;
 	@Mock ChangeListener mockedListener;

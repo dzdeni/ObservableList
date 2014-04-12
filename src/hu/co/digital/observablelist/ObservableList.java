@@ -6,6 +6,10 @@ import com.google.common.collect.ForwardingList;
 
 class ObservableList<E> extends ForwardingList<E> {
 	
+	public interface ChangeListener { 
+		void onObservableListChanged();
+	}
+	
 	private List<ChangeListener> listeners = new ArrayList<ChangeListener>();
 	final List<E> delegate; // backing list
   

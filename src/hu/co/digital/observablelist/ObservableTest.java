@@ -19,18 +19,11 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class ObservableTest {
 	
-	public class SimpleChangeListener implements ObservableList.ChangeListener {
-
-		@Override
-		public void onObservableListChanged() {}
-
-	}
-	
 	@Mock ChangeListener mockedListener;
 
 	@Before
 	public void setup() {
-		mockedListener = mock(SimpleChangeListener.class);
+		mockedListener = mock(ObservableList.ChangeListener.class);
 	}
 
 	@Test

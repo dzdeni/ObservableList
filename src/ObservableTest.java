@@ -1,6 +1,4 @@
-package hu.co.digital.observablelist;
-
-import hu.co.digital.observablelist.ObservableList.ChangeListener;
+import ObservableList.ChangeListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;

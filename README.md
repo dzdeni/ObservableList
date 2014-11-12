@@ -33,7 +33,7 @@ And this is how you can create, register and unregister the listeners:
 
 #### Build
 Compile:
-`javac -d ./bin -cp ./lib/* ./src/hu/co/digital/observablelist/*.java`
+`javac -d ./bin -cp ./lib/* ./src/*.java`
 
 Run Test: (which is not an exhaustive test suite, just an example)
-`java -cp ./lib/*;./bin org.junit.runner.JUnitCore hu.co.digital.observablelist.ObservableTest`
+`java -cp ./lib/*;./bin org.junit.runner.JUnitCore ObservableTest`

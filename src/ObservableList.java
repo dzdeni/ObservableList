@@ -1,5 +1,3 @@
-package hu.co.digital.observablelist;
-
 import java.util.*;
 
 import com.google.common.collect.ForwardingList;
